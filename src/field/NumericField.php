@@ -15,33 +15,38 @@ use \org\majkel\dbase\Field;
  *
  * @author majkel
  */
-class NumericField extends Field {
+class NumericField extends Field
+{
 
     /**
      * CharacterField constructor.
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->length = 10;
     }
 
     /**
      * {@inheritdoc}
      */
-    public function toData($value) {
-        return substr(strval((integer)$value), 0, $this->getLength());
+    public function toData($value)
+    {
+        return substr(strval($value), 0, $this->getLength());
     }
 
     /**
      * {@inheritdoc}
      */
-    public function fromData($data) {
-        return (integer)substr($data, 0, $this->getLength());
+    public function fromData($data)
+    {
+        return substr($data, 0, $this->getLength());
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getType() {
+    public function getType()
+    {
         return Field::TYPE_NUMERIC;
     }
 

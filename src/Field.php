@@ -135,7 +135,7 @@ abstract class Field {
      * @return \org\majkel\dbase\Field
      */
     public function setLength($length) {
-        $this->length = (integer)$length;
+        $this->length = $length;
         return $this;
     }
 
